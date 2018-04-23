@@ -1,4 +1,4 @@
-package com.example.customdatetimepicker;
+package com.example.customdatetimepicker.lib;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.customdatetimepicker.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -1,10 +1,12 @@
-package com.example.customdatetimepicker;
+package com.example.customdatetimepicker.lib;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
+
+import com.example.customdatetimepicker.R;
 
 import java.lang.reflect.Field;
 
@@ -14,14 +16,11 @@ import java.lang.reflect.Field;
  * dividers.
  *
  * @author jjobes
- *
  */
-public class CustomDatePicker extends DatePicker
-{
+public class CustomDatePicker extends DatePicker {
     private static final String TAG = "CustomDatePicker";
 
-    public CustomDatePicker(Context context, AttributeSet attrs)
-    {
+    public CustomDatePicker(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         Class<?> idClass = null;
@@ -34,8 +33,7 @@ public class CustomDatePicker extends DatePicker
         NumberPicker dayNumberPicker = null;
         NumberPicker yearNumberPicker = null;
 
-        try
-        {
+        try {
             // Create an instance of the id class
             idClass = Class.forName("com.android.internal.R$id");
 
@@ -58,21 +56,13 @@ public class CustomDatePicker extends DatePicker
             selectionDividerField.set(monthNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(dayNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(yearNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             Log.e(TAG, "ClassNotFoundException in CustomDatePicker", e);
-        }
-        catch (NoSuchFieldException e)
-        {
+        } catch (NoSuchFieldException e) {
             Log.e(TAG, "NoSuchFieldException in CustomDatePicker", e);
-        }
-        catch (IllegalAccessException e)
-        {
+        } catch (IllegalAccessException e) {
             Log.e(TAG, "IllegalAccessException in CustomDatePicker", e);
-        }
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             Log.e(TAG, "IllegalArgumentException in CustomDatePicker", e);
         }
     }

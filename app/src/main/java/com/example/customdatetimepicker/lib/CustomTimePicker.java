@@ -1,10 +1,12 @@
-package com.example.customdatetimepicker;
+package com.example.customdatetimepicker.lib;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
+
+import com.example.customdatetimepicker.R;
 
 import java.lang.reflect.Field;
 
@@ -14,14 +16,11 @@ import java.lang.reflect.Field;
  * dividers.
  *
  * @author jjobes
- *
  */
-public class CustomTimePicker extends TimePicker
-{
+public class CustomTimePicker extends TimePicker {
     private static final String TAG = "CustomTimePicker";
 
-    public CustomTimePicker(Context context, AttributeSet attrs)
-    {
+    public CustomTimePicker(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         Class<?> idClass = null;
@@ -34,8 +33,7 @@ public class CustomTimePicker extends TimePicker
         NumberPicker minuteNumberPicker = null;
         NumberPicker amPmNumberPicker = null;
 
-        try
-        {
+        try {
             // Create an instance of the id class
             idClass = Class.forName("com.android.internal.R$id");
 
@@ -58,21 +56,13 @@ public class CustomTimePicker extends TimePicker
             selectionDividerField.set(hourNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(minuteNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(amPmNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             Log.e(TAG, "ClassNotFoundException in CustomTimePicker", e);
-        }
-        catch (NoSuchFieldException e)
-        {
+        } catch (NoSuchFieldException e) {
             Log.e(TAG, "NoSuchFieldException in CustomTimePicker", e);
-        }
-        catch (IllegalAccessException e)
-        {
+        } catch (IllegalAccessException e) {
             Log.e(TAG, "IllegalAccessException in CustomTimePicker", e);
-        }
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             Log.e(TAG, "IllegalArgumentException in CustomTimePicker", e);
         }
     }

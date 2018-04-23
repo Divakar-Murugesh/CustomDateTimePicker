@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.customdatetimepicker.SlidingTabLayout
+    <com.example.customdatetimepicker.lib.SlidingTabLayout
         android:id="@+id/slidingTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.example.customdatetimepicker.CustomViewPager
+    <com.example.customdatetimepicker.lib.CustomViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

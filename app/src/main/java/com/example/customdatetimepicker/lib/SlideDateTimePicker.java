@@ -1,4 +1,4 @@
-package com.example.customdatetimepicker;
+package com.example.customdatetimepicker.lib;
 
 import java.util.Date;
 

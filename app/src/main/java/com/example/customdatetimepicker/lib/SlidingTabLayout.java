@@ -1,4 +1,4 @@
-package com.example.customdatetimepicker;
+package com.example.customdatetimepicker.lib;
 
 /*
  * Copyright (C) 2013 The Android Open Source Project

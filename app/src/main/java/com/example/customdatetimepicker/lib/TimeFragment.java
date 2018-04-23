@@ -1,4 +1,4 @@
-package com.example.customdatetimepicker;
+package com.example.customdatetimepicker.lib;
 
 import android.content.Context;
 import android.os.Build;
@@ -13,6 +13,8 @@ import android.widget.DatePicker;
 import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TimePicker;
+
+import com.example.customdatetimepicker.R;
 
 /**
  * The fragment for the second page in the ViewPager that holds

@@ -15,42 +15,74 @@ import java.util.Date;
 
 public class MainActivity extends FragmentActivity {
 
-    TextView textView;
+    TextView textView1, textView2, textView3;
 
-    private SimpleDateFormat mFormatter = new SimpleDateFormat("dd MMM yyyy hh:mm aa");
-    private Button mButton;
-
-    private SlideDateTimeListener listener = new SlideDateTimeListener() {
-
-        @Override
-        public void onDateTimeSet(Date date) {
-            textView.setText(mFormatter.format(date));
-            Toast.makeText(MainActivity.this, mFormatter.format(date), Toast.LENGTH_SHORT).show();
-        }
-
-        // Optional cancel listener
-        @Override
-        public void onDateTimeCancel() {
-            Toast.makeText(MainActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
-        }
-    };
+    private SimpleDateFormat mFormatter1 = new SimpleDateFormat("dd MMM yyyy");
+    private SimpleDateFormat mFormatter2 = new SimpleDateFormat("hh:mm aa");
+    private SimpleDateFormat mFormatter3 = new SimpleDateFormat("dd MMM yyyy hh:mm aa");
+    private Button button1, button2, button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = (TextView) findViewById(R.id.textView);
+        textView1 = (TextView) findViewById(R.id.textView1);
+        textView2 = (TextView) findViewById(R.id.textView2);
+        textView3 = (TextView) findViewById(R.id.textView3);
 
-        mButton = (Button) findViewById(R.id.button);
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
 
-        mButton.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 new SlideDateTimePicker.Builder(getSupportFragmentManager())
-                        .setListener(listener)
+                        .setListener(dateListener)
                         .setInitialDate(new Date())
+                        .setDatePickerOnly()
+                        //.setTimePickerOnly()
+                        //.setBothPickers()
+                        //.setMinDate(minDate)
+                        //.setMaxDate(maxDate)
+                        //.setIs24HourTime(true)
+                        //.setTheme(SlideDateTimePicker.HOLO_DARK)
+                        //.setIndicatorColor(Color.parseColor("#990000"))
+                        .build()
+                        .show();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new SlideDateTimePicker.Builder(getSupportFragmentManager())
+                        .setListener(timeListener)
+                        .setInitialDate(new Date())
+                        //.setDatePickerOnly()
+                        .setTimePickerOnly()
+                        //.setBothPickers()
+                        //.setMinDate(minDate)
+                        //.setMaxDate(maxDate)
+                        //.setIs24HourTime(true)
+                        //.setTheme(SlideDateTimePicker.HOLO_DARK)
+                        //.setIndicatorColor(Color.parseColor("#990000"))
+                        .build()
+                        .show();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new SlideDateTimePicker.Builder(getSupportFragmentManager())
+                        .setListener(dateTimeListener)
+                        .setInitialDate(new Date())
+                        //.setDatePickerOnly()
+                        //.setTimePickerOnly()
+                        .setBothPickers()
                         //.setMinDate(minDate)
                         //.setMaxDate(maxDate)
                         //.setIs24HourTime(true)
@@ -61,4 +93,48 @@ public class MainActivity extends FragmentActivity {
             }
         });
     }
+
+    private SlideDateTimeListener dateListener = new SlideDateTimeListener() {
+
+        @Override
+        public void onDateTimeSet(Date date) {
+            textView1.setText(mFormatter1.format(date));
+            Toast.makeText(MainActivity.this, mFormatter1.format(date), Toast.LENGTH_SHORT).show();
+        }
+
+        // Optional cancel listener
+        @Override
+        public void onDateTimeCancel() {
+            Toast.makeText(MainActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+        }
+    };
+    private SlideDateTimeListener timeListener = new SlideDateTimeListener() {
+
+        @Override
+        public void onDateTimeSet(Date date) {
+            textView2.setText(mFormatter2.format(date));
+            Toast.makeText(MainActivity.this, mFormatter2.format(date), Toast.LENGTH_SHORT).show();
+        }
+
+        // Optional cancel listener
+        @Override
+        public void onDateTimeCancel() {
+            Toast.makeText(MainActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+        }
+    };
+    private SlideDateTimeListener dateTimeListener = new SlideDateTimeListener() {
+
+        @Override
+        public void onDateTimeSet(Date date) {
+            textView3.setText(mFormatter3.format(date));
+            Toast.makeText(MainActivity.this, mFormatter3.format(date), Toast.LENGTH_SHORT).show();
+        }
+
+        // Optional cancel listener
+        @Override
+        public void onDateTimeCancel() {
+            Toast.makeText(MainActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+        }
+    };
+
 }

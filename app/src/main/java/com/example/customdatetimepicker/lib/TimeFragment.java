@@ -36,7 +36,7 @@ public class TimeFragment extends Fragment
     }
 
     private TimeChangedListener mCallback;
-    private TimePicker mTimePicker;
+    private CustomTimePicker mTimePicker;
 
     public TimeFragment()
     {
@@ -66,7 +66,7 @@ public class TimeFragment extends Fragment
     /**
      * Return an instance of TimeFragment with its bundle filled with the
      * constructor arguments. The values in the bundle are retrieved in
-     * {@link #onCreateView()} below to properly initialize the TimePicker.
+     * {@link - onCreateView()} below to properly initialize the TimePicker.
      *
      * @param theme
      * @param hour
@@ -120,7 +120,7 @@ public class TimeFragment extends Fragment
 
         View v = localInflater.inflate(R.layout.fragment_time, container, false);
 
-        mTimePicker = (TimePicker) v.findViewById(R.id.timePicker);
+        mTimePicker = (CustomTimePicker) v.findViewById(R.id.timePicker);
         // block keyboard popping up on touch
         mTimePicker.setDescendantFocusability(DatePicker.FOCUS_BLOCK_DESCENDANTS);
         mTimePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {

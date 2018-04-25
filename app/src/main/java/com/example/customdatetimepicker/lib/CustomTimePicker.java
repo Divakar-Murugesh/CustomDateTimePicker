@@ -53,9 +53,9 @@ public class CustomTimePicker extends TimePicker {
             // to refer to our custom drawables
             selectionDividerField = numberPickerClass.getDeclaredField("mSelectionDivider");
             selectionDividerField.setAccessible(true);
-            selectionDividerField.set(hourNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-            selectionDividerField.set(minuteNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-            selectionDividerField.set(amPmNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
+            selectionDividerField.set(hourNumberPicker, getResources().getDrawable(R.drawable.bar_nine_patch));
+            selectionDividerField.set(minuteNumberPicker, getResources().getDrawable(R.drawable.bar_nine_patch));
+            selectionDividerField.set(amPmNumberPicker, getResources().getDrawable(R.drawable.bar_nine_patch));
         } catch (ClassNotFoundException e) {
             Log.e(TAG, "ClassNotFoundException in CustomTimePicker", e);
         } catch (NoSuchFieldException e) {

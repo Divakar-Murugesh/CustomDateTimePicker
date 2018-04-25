@@ -1,5 +1,6 @@
 package com.example.customdatetimepicker;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -49,7 +50,7 @@ public class MainActivity extends FragmentActivity {
                         //.setMaxDate(maxDate)
                         //.setIs24HourTime(true)
                         //.setTheme(SlideDateTimePicker.HOLO_DARK)
-                        //.setIndicatorColor(Color.parseColor("#990000"))
+                        .setIndicatorColor(Color.parseColor("#5049BC"))
                         .build()
                         .show();
             }
@@ -68,7 +69,7 @@ public class MainActivity extends FragmentActivity {
                         //.setMaxDate(maxDate)
                         //.setIs24HourTime(true)
                         //.setTheme(SlideDateTimePicker.HOLO_DARK)
-                        //.setIndicatorColor(Color.parseColor("#990000"))
+                        .setIndicatorColor(Color.parseColor("#5049BC"))
                         .build()
                         .show();
             }
@@ -87,7 +88,7 @@ public class MainActivity extends FragmentActivity {
                         //.setMaxDate(maxDate)
                         //.setIs24HourTime(true)
                         //.setTheme(SlideDateTimePicker.HOLO_DARK)
-                        //.setIndicatorColor(Color.parseColor("#990000"))
+                        .setIndicatorColor(Color.parseColor("#5049BC"))
                         .build()
                         .show();
             }

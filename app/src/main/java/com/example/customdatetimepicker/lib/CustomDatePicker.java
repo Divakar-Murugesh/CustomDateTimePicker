@@ -53,9 +53,9 @@ public class CustomDatePicker extends DatePicker {
             // to refer to our custom drawables
             selectionDividerField = numberPickerClass.getDeclaredField("mSelectionDivider");
             selectionDividerField.setAccessible(true);
-            selectionDividerField.set(monthNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-            selectionDividerField.set(dayNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-            selectionDividerField.set(yearNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
+            selectionDividerField.set(monthNumberPicker, getResources().getDrawable(R.drawable.bar_nine_patch));
+            selectionDividerField.set(dayNumberPicker, getResources().getDrawable(R.drawable.bar_nine_patch));
+            selectionDividerField.set(yearNumberPicker, getResources().getDrawable(R.drawable.bar_nine_patch));
         } catch (ClassNotFoundException e) {
             Log.e(TAG, "ClassNotFoundException in CustomDatePicker", e);
         } catch (NoSuchFieldException e) {

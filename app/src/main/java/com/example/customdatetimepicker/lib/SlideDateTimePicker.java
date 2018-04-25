@@ -193,6 +193,8 @@ public class SlideDateTimePicker {
 
         public Builder(FragmentManager fm) {
             this.fm = fm;
+            SlideDateTimePicker.TIME_PICKER_ONLY = true;
+            SlideDateTimePicker.DATE_PICKER_OMLY = true;
         }
 
         /**
@@ -260,12 +262,6 @@ public class SlideDateTimePicker {
 
         public Builder setTimePickerOnly() {
             SlideDateTimePicker.DATE_PICKER_OMLY = false;
-            SlideDateTimePicker.TIME_PICKER_ONLY = true;
-            return this;
-        }
-
-        public Builder setBothPickers() {
-            SlideDateTimePicker.DATE_PICKER_OMLY = true;
             SlideDateTimePicker.TIME_PICKER_ONLY = true;
             return this;
         }
